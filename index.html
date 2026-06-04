@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gastón Palavecino — Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer specialising in .NET, AI systems, and full-stack development. 8+ years building enterprise software and AI-powered applications.">
+  <meta name="author" content="Gastón Palavecino">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gastón Palavecino — Senior Software Engineer">
+  <meta property="og:description" content="Senior Software Engineer specialising in .NET, AI systems, and full-stack development.">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Fonts — preconnect then load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     NAV — N5 Floating pill
+     ══════════════════════════════════════════════════════════════════════════ -->
+<header role="banner">
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__wordmark" aria-label="Gastón Palavecino — home">Gastón Palavecino</a>
+
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="#work" class="nav__link">Work</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <a href="#contact" class="nav__cta">Get in touch</a>
+
+      <!-- Mobile toggle -->
+      <button
+        class="nav__toggle"
+        aria-controls="nav-sheet"
+        aria-expanded="false"
+        aria-label="Open navigation menu"
+      >
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div id="nav-sheet" class="nav__sheet" role="region" aria-label="Mobile navigation">
+      <a href="#work" class="nav__link">Work</a>
+      <a href="#experience" class="nav__link">Experience</a>
+      <a href="#skills" class="nav__link">Skills</a>
+      <a href="#contact" class="nav__link">Contact</a>
+      <a href="#contact" class="nav__cta">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     HERO — Marquee, left-biased, HP3 cursor-spotlight
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-labelledby="hero-name">
+  <div class="hero__container">
+    <div class="hero__content">
+
+      <span class="hero__eyebrow">Senior Software Engineer · .NET &amp; AI Systems</span>
+
+      <h1 class="hero__name" id="hero-name">Gastón<br>Palavecino</h1>
+
+      <p class="hero__statement">
+        Building intelligent systems — from enterprise .NET backends to AI-powered applications.
+      </p>
+
+      <ul class="hero__tags" role="list">
+        <li class="hero__tag">.NET 8</li>
+        <li class="hero__tag">AI Engineering</li>
+        <li class="hero__tag">React / Next.js</li>
+        <li class="hero__tag">LLMs &amp; RAG</li>
+        <li class="hero__tag">Full Stack</li>
+      </ul>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn-primary">Get in touch</a>
+        <a href="assets/cv-gaston-palavecino-2026.pdf" download class="btn-secondary">Download CV</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     ABOUT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container">
+    <div class="about__grid">
+
+      <div class="about__text">
+        <h2 class="section__title reveal" id="about-title">About</h2>
+
+        <p class="about__bio reveal">
+          I'm a software engineer with over 8 years building software across the Microsoft
+          ecosystem — from legacy .NET Framework migrations to modern .NET 8 microservices.
+          Lately I've been deep in AI engineering: RAG pipelines, MCP integrations,
+          LLM-powered workflows, and computer vision.
+        </p>
+
+        <p class="about__bio reveal">
+          I work at the intersection of solid backend engineering and emerging AI tooling —
+          shipping systems that are production-ready, not just demos.
+        </p>
+
+        <div class="about__meta reveal">
+          <p class="about__meta-item"><strong>Location</strong> — Victoria, Entre Ríos, Argentina</p>
+          <p class="about__meta-item"><strong>Focus</strong> — .NET, AI Engineering, Full Stack</p>
+          <p class="about__meta-item"><strong>Stack</strong> — C#, ASP.NET Core, React, Next.js, SQL Server, PostgreSQL</p>
+          <p class="about__meta-item"><strong>Currently</strong> — Senior Full Stack Developer @ 4Points Consulting</p>
+        </div>
+      </div>
+
+      <div class="about__photo-wrap reveal">
+        <figure class="about__figure">
+          <img
+            src="assets/gaston-palavecino.jpeg"
+            alt="Gastón Palavecino — profile photo"
+            class="about__photo"
+            width="400"
+            height="533"
+            loading="eager"
+            fetchpriority="low"
+          >
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     WORK — selected projects
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="work" aria-labelledby="work-title">
+  <div class="container">
+
+    <header class="section__header reveal">
+      <h2 class="section__title" id="work-title">Selected work</h2>
+      <p class="section__lead">Projects built end-to-end — from architecture to production.</p>
+    </header>
+
+    <div class="work__grid">
+
+      <!-- Featured: MDB Pilates (has real metric — 180 active students) -->
+      <article class="work-card work-card--featured reveal" aria-labelledby="project-mdb">
+        <div class="work-card__body">
+          <div>
+            <header class="work-card__header">
+              <span class="work-card__badge">Full Stack · Production · 180 active students</span>
+              <h3 class="work-card__title" id="project-mdb">MDB Pilates</h3>
+            </header>
+            <p class="work-card__desc">
+              Production-ready studio management platform. .NET 8 REST API backend,
+              React/Next.js web front end, and a React Native mobile app published on the App Store.
+              Currently serving 180 active students day-to-day.
+            </p>
+            <ul class="work-card__tags" role="list">
+              <li class="work-card__tag">.NET 8</li>
+              <li class="work-card__tag">ASP.NET Core</li>
+              <li class="work-card__tag">React</li>
+              <li class="work-card__tag">Next.js</li>
+              <li class="work-card__tag">React Native</li>
+              <li class="work-card__tag">App Store</li>
+              <li class="work-card__tag">SQL Server</li>
+              <li class="work-card__tag">REST API</li>
+            </ul>
+            <a href="https://mdbpilates.com.ar" target="_blank" rel="noopener noreferrer" class="work-card__link">
+              mdbpilates.com.ar
+            </a>
+          </div>
+          <div class="work-card__screenshots">
+            <figure class="screenshot">
+              <img
+                src="assets/mdbpilates/1.jpeg"
+                alt="MDB Pilates — pantalla de calendario de clases"
+                width="390" height="844"
+                loading="lazy"
+              >
+            </figure>
+            <figure class="screenshot">
+              <img
+                src="assets/mdbpilates/2.jpeg"
+                alt="MDB Pilates — pantalla de reservas"
+                width="390" height="844"
+                loading="lazy"
+              >
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <!-- VeterinarIA -->
+      <article class="work-card reveal" aria-labelledby="project-vet">
+        <figure class="work-card__preview">
+          <img
+            src="assets/veterinaria/dashboard-analisis.png"
+            alt="VeterinarIA — dashboard de análisis reproductivo"
+            width="1156" height="697"
+            loading="lazy"
+          >
+        </figure>
+        <header class="work-card__header">
+          <span class="work-card__badge">SaaS · AI · Production</span>
+          <h3 class="work-card__title" id="project-vet">VeterinarIA</h3>
+        </header>
+        <p class="work-card__desc">
+          SaaS platform for livestock reproductive analysis. AI-generated reports,
+          OCR document workflows, and Whisper transcription built into a veterinary diagnostic tool.
+        </p>
+        <ul class="work-card__tags" role="list">
+          <li class="work-card__tag">AI Reports</li>
+          <li class="work-card__tag">OCR</li>
+          <li class="work-card__tag">Whisper</li>
+          <li class="work-card__tag">.NET 8</li>
+          <li class="work-card__tag">LLM</li>
+        </ul>
+        <a href="https://veterinar-ia.com.ar" target="_blank" rel="noopener noreferrer" class="work-card__link">
+          veterinar-ia.com.ar
+        </a>
+      </article>
+
+      <!-- Macro-IA -->
+      <article class="work-card reveal" aria-labelledby="project-macro">
+        <figure class="work-card__preview">
+          <img
+            src="assets/macro-ia/plan-comidas.jpeg"
+            alt="Macro-IA — meal plan generated by AI with macro breakdown"
+            width="909" height="789"
+            loading="lazy"
+          >
+        </figure>
+        <header class="work-card__header">
+          <span class="work-card__badge">AI · Nutrition · Production</span>
+          <h3 class="work-card__title" id="project-macro">Macro-IA</h3>
+        </header>
+        <p class="work-card__desc">
+          AI-powered macro counter that analyses your diet and proposes personalised
+          meal solutions to hit your nutritional targets.
+        </p>
+        <ul class="work-card__tags" role="list">
+          <li class="work-card__tag">LLM</li>
+          <li class="work-card__tag">Next.js</li>
+          <li class="work-card__tag">Vercel</li>
+          <li class="work-card__tag">Nutrition AI</li>
+        </ul>
+        <a href="https://macro-ia.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-card__link">
+          macro-ia.vercel.app
+        </a>
+      </article>
+
+      <!-- AI Service -->
+      <article class="work-card reveal" aria-labelledby="project-ai">
+        <header class="work-card__header">
+          <span class="work-card__badge">AI Engineering</span>
+          <h3 class="work-card__title" id="project-ai">AI Service</h3>
+        </header>
+        <p class="work-card__desc">
+          Personal AI engineering platform: conversational memory, streaming responses,
+          RAG pipelines, vector databases, and multi-agent orchestration.
+        </p>
+        <ul class="work-card__tags" role="list">
+          <li class="work-card__tag">RAG</li>
+          <li class="work-card__tag">Vector DB</li>
+          <li class="work-card__tag">Streaming</li>
+          <li class="work-card__tag">Multi-agent</li>
+          <li class="work-card__tag">MCP</li>
+        </ul>
+      </article>
+
+      <!-- YOLOv8 -->
+      <article class="work-card reveal" aria-labelledby="project-yolo">
+        <header class="work-card__header">
+          <span class="work-card__badge">Computer Vision · Research</span>
+          <h3 class="work-card__title" id="project-yolo">YOLOv8 Livestock Detection</h3>
+        </header>
+        <p class="work-card__desc">
+          Experimental computer vision system for cattle detection and counting.
+          Custom-trained YOLOv8 models with OpenCV post-processing.
+        </p>
+        <ul class="work-card__tags" role="list">
+          <li class="work-card__tag">YOLOv8</li>
+          <li class="work-card__tag">OpenCV</li>
+          <li class="work-card__tag">Python</li>
+          <li class="work-card__tag">Computer Vision</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     EXPERIENCE
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="section" id="experience" aria-labelledby="experience-title">
+  <div class="container">
+
+    <header class="section__header reveal">
+      <h2 class="section__title" id="experience-title">Experience</h2>
+    </header>
+
+    <ul class="experience__list" role="list">
+
+      <li class="experience__item reveal">
+        <p class="experience__period">September 2022 — Present</p>
+        <h3 class="experience__role">Senior Full Stack Developer</h3>
+        <p class="experience__company">4Points Consulting</p>
+        <ul class="experience__points" role="list">
+          <li class="experience__point">Enterprise application development with .NET 8, React, SQL Server, and cloud architectures.</li>
+          <li class="experience__point">REST API design and backend services for high-volume business operations.</li>
+          <li class="experience__point">Legacy system modernisation — migrating .NET Framework codebases to .NET 8.</li>
+          <li class="experience__point">Architecture decisions, performance optimisation, and frontend work in React.</li>
+        </ul>
+      </li>
+
+      <li class="experience__item reveal">
+        <p class="experience__period">2019 — 2022</p>
+        <h3 class="experience__role">.NET Developer</h3>
+        <p class="experience__company">Mainset S.A.S</p>
+        <ul class="experience__points" role="list">
+          <li class="experience__point">Enterprise applications using WCF, WPF, ASP.NET, Angular, SQL Server, and Oracle.</li>
+          <li class="experience__point">Backend development with Entity Framework, REST services, and desktop applications.</li>
+          <li class="experience__point">Custom solutions, integrations, and evolutionary maintenance for enterprise clients.</li>
+        </ul>
+      </li>
+
+      <li class="experience__item reveal">
+        <p class="experience__period">2018 — 2019</p>
+        <h3 class="experience__role">.NET Developer</h3>
+        <p class="experience__company">COA S.A</p>
+        <ul class="experience__points" role="list">
+          <li class="experience__point">Internal systems in ASP.NET, C#, VB.NET, WinForms, and SQL Server.</li>
+          <li class="experience__point">Legacy enterprise systems and business process improvements.</li>
+        </ul>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     SKILLS
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="section--tight section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+
+    <header class="section__header reveal">
+      <h2 class="section__title" id="skills-title">Stack</h2>
+    </header>
+
+    <div class="skills__grid">
+
+      <div class="reveal">
+        <h3 class="skills__group-title">Languages &amp; Frameworks</h3>
+        <ul class="skills__tags" role="list">
+          <li class="skills__tag">C#</li>
+          <li class="skills__tag">ASP.NET Core</li>
+          <li class="skills__tag">.NET 8</li>
+          <li class="skills__tag">React</li>
+          <li class="skills__tag">Next.js</li>
+          <li class="skills__tag">React Native</li>
+          <li class="skills__tag">TypeScript</li>
+          <li class="skills__tag">Python</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <h3 class="skills__group-title">Data &amp; Persistence</h3>
+        <ul class="skills__tags" role="list">
+          <li class="skills__tag">SQL Server</li>
+          <li class="skills__tag">PostgreSQL</li>
+          <li class="skills__tag">Entity Framework Core</li>
+          <li class="skills__tag">Dapper</li>
+          <li class="skills__tag">Vector DBs</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <h3 class="skills__group-title">AI &amp; LLMs</h3>
+        <ul class="skills__tags" role="list">
+          <li class="skills__tag">LLM Integration</li>
+          <li class="skills__tag">RAG Pipelines</li>
+          <li class="skills__tag">MCP</li>
+          <li class="skills__tag">OCR Workflows</li>
+          <li class="skills__tag">Whisper</li>
+          <li class="skills__tag">Multi-agent</li>
+          <li class="skills__tag">YOLOv8</li>
+          <li class="skills__tag">OpenCV</li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <h3 class="skills__group-title">Tooling &amp; Infra</h3>
+        <ul class="skills__tags" role="list">
+          <li class="skills__tag">REST APIs</li>
+          <li class="skills__tag">Hangfire</li>
+          <li class="skills__tag">Polly</li>
+          <li class="skills__tag">Clean Architecture</li>
+          <li class="skills__tag">Azure</li>
+          <li class="skills__tag">Git</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     EDUCATION
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="section--tight section" id="education" aria-labelledby="education-title">
+  <div class="container">
+
+    <header class="section__header reveal">
+      <h2 class="section__title" id="education-title">Education</h2>
+    </header>
+
+    <ul class="education__list" role="list">
+
+      <li class="education__item reveal">
+        <div>
+          <h3 class="education__degree">AI Engineering Degree</h3>
+          <p class="education__school">Universidad de Palermo</p>
+        </div>
+        <span class="education__period">2026 — Present</span>
+      </li>
+
+      <li class="education__item reveal">
+        <div>
+          <h3 class="education__degree">Systems Engineering Degree</h3>
+          <p class="education__school">Universidad Tecnológica Nacional Rosario</p>
+        </div>
+        <span class="education__period">2013 — 2018</span>
+      </li>
+
+    </ul>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════════════════════════════════════ -->
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <div class="contact__inner">
+
+      <h2 class="contact__title reveal" id="contact-title">
+        Let's build something worth shipping.
+      </h2>
+
+      <p class="contact__sub reveal">
+        Open to senior engineering roles, AI projects, and interesting problems.
+        Based in Argentina — available for remote work globally.
+      </p>
+
+      <div class="contact__actions reveal">
+        <a href="mailto:gastonpalav@gmail.com" class="btn-primary">Send a message</a>
+        <a href="assets/cv-gaston-palavecino-2026.pdf" download class="btn-secondary">Download CV</a>
+      </div>
+
+      <ul class="contact__links reveal" role="list">
+        <li>
+          <a href="mailto:gastonpalav@gmail.com" class="contact__link">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <rect width="20" height="16" x="2" y="4" rx="2"/>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+            </svg>
+            gastonpalav@gmail.com
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://linkedin.com/in/gaston-palavecino-4071003b4"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact__link"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect width="4" height="12" x="2" y="9"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn ↗
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/5493436445541"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact__link"
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            WhatsApp ↗
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     FOOTER — Ft5 Statement
+     ══════════════════════════════════════════════════════════════════════════ -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__statement">
+        <strong>Gastón Palavecino</strong> — building software that works in production.
+      </p>
+      <span class="footer__copy">© 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

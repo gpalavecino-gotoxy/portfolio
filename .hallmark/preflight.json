@@ -1,0 +1,14 @@
+{
+  "scanned": "2026-06-04",
+  "findings": {
+    "fontStack": null,
+    "palette": null,
+    "motion": null,
+    "spacingScale": null,
+    "framework": "vanilla HTML (no package.json, no build tool)",
+    "designMd": null
+  },
+  "summary": "No pre-flight signals — greenfield project. Full Hallmark stack introduced.",
+  "preserves": [],
+  "introduces": ["token system", "Aurora palette", "Geist + Geist Mono", "macrostructure", "microinteractions", "slop-test gates"]
+}
