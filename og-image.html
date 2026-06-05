@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #17151e;
+      font-family: 'Geist', system-ui, sans-serif;
+    }
+
+    .bloom-a {
+      position: absolute;
+      width: 840px; height: 693px;
+      top: -126px; left: -240px;
+      background: radial-gradient(circle, rgba(110,45,150,0.38) 0%, transparent 60%);
+    }
+    .bloom-b {
+      position: absolute;
+      width: 780px; height: 630px;
+      bottom: -126px; right: -120px;
+      background: radial-gradient(circle, rgba(45,90,150,0.22) 0%, transparent 60%);
+    }
+
+    .content {
+      position: relative; z-index: 1;
+      width: 100%; height: 100%;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 0 84px;
+    }
+
+    .text-group {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 48px;
+    }
+
+    .name {
+      font-size: 60px;
+      font-weight: 700;
+      color: #edeef3;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .role {
+      font-size: 22.8px;
+      color: #9899a6;
+      margin-bottom: 14.4px;
+    }
+
+    .tags {
+      font-family: 'Geist Mono', monospace;
+      font-size: 18px;
+      color: #c966a4;
+    }
+
+    .monogram {
+      font-size: 216px;
+      font-weight: 700;
+      color: transparent;
+      -webkit-text-stroke: 2px rgba(201,102,164,0.3);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="bloom-a"></div>
+  <div class="bloom-b"></div>
+  <div class="content">
+    <div class="text-group">
+      <div class="name">Gastón Palavecino</div>
+      <div class="role">Senior Software Engineer</div>
+      <div class="tags">AI Systems</div>
+    </div>
+    <div class="monogram">GP</div>
+  </div>
+</body>
+</html>
