@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="oklch(13% 0.015 280)"/>
+  <rect width="32" height="32" rx="6" fill="oklch(14% 0.004 260)"/>
   <text
     x="16" y="21"
     text-anchor="middle"
@@ -7,6 +7,6 @@
     font-size="13"
     font-weight="500"
     letter-spacing="0.04em"
-    fill="oklch(70% 0.19 315)"
+    fill="oklch(72% 0.16 55)"
   >GP</text>
 </svg>
