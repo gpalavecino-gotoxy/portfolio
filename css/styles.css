@@ -319,6 +319,24 @@ strong {
   max-width: 54rem;
 }
 
+/* Entrance — one-shot, staggered fade + rise on load (not a loop) */
+@keyframes hero-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.hero__name,
+.hero__statement,
+.hero__tags,
+.hero__actions {
+  animation: hero-in var(--dur-long) var(--ease-out) both;
+}
+
+.hero__name      { animation-delay: 60ms; }
+.hero__statement { animation-delay: 160ms; }
+.hero__tags      { animation-delay: 260ms; }
+.hero__actions   { animation-delay: 340ms; }
+
 /* H1 — "Gastón Palavecino" = 18 chars, full display size */
 .hero__name {
   font-size: var(--text-display);
@@ -665,6 +683,18 @@ strong {
   border: 1px solid var(--color-rule);
   border-radius: var(--radius-md);
   overflow: hidden;
+}
+
+.screenshot img,
+.work-card__preview img {
+  transition: transform var(--dur-long) var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .work-card:hover .screenshot img,
+  .work-card:hover .work-card__preview img {
+    transform: scale(1.04);
+  }
 }
 
 .screenshot img {
@@ -1014,6 +1044,15 @@ strong {
 
   .reveal.is-visible {
     opacity: 1;
+  }
+
+  .hero__name,
+  .hero__statement,
+  .hero__tags,
+  .hero__actions {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   html {
