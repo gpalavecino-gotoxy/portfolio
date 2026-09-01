@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@700&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -16,70 +16,85 @@
       font-family: 'Geist', system-ui, sans-serif;
     }
 
-    .bloom-a {
+    .bloom {
       position: absolute;
-      width: 840px; height: 693px;
-      top: -126px; left: -240px;
-      background: radial-gradient(circle, oklch(45% 0.09 55 / 0.16) 0%, transparent 60%);
+      width: 760px; height: 630px;
+      top: -160px; right: -260px;
+      background: radial-gradient(circle, oklch(45% 0.09 55 / 0.14) 0%, transparent 62%);
     }
 
     .content {
       position: relative; z-index: 1;
       width: 100%; height: 100%;
-      display: grid;
-      grid-template-columns: 1fr auto;
+      display: flex;
       align-items: center;
-      padding: 0 84px;
+      padding-left: 110px;
+      padding-right: 90px;
+    }
+
+    .accent-bar {
+      position: absolute;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 340px;
+      background: oklch(72% 0.16 55);
+      border-radius: 3px;
     }
 
     .text-group {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding-right: 48px;
+      max-width: 920px;
     }
 
     .name {
-      font-size: 60px;
+      font-size: 92px;
       font-weight: 700;
       color: oklch(95% 0.003 260);
-      letter-spacing: -0.03em;
-      line-height: 1.05;
-      margin-bottom: 12px;
+      letter-spacing: -0.035em;
+      line-height: 1.02;
+      margin-bottom: 24px;
     }
 
     .role {
-      font-size: 22.8px;
-      color: oklch(68% 0.005 260);
-      margin-bottom: 14.4px;
+      font-size: 34px;
+      font-weight: 500;
+      color: oklch(78% 0.004 260);
+      letter-spacing: -0.01em;
+      margin-bottom: 22px;
     }
 
     .tags {
       font-family: 'Geist Mono', monospace;
-      font-size: 18px;
+      font-size: 24px;
+      font-weight: 500;
       color: oklch(72% 0.16 55);
+      letter-spacing: 0.01em;
     }
 
-    .monogram {
-      font-size: 216px;
-      font-weight: 700;
-      color: transparent;
-      -webkit-text-stroke: 2px oklch(72% 0.16 55 / 0.3);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      user-select: none;
+    .domain {
+      position: absolute;
+      right: 64px;
+      bottom: 56px;
+      font-family: 'Geist Mono', monospace;
+      font-size: 22px;
+      color: oklch(48% 0.006 260);
+      letter-spacing: 0.02em;
     }
   </style>
 </head>
 <body>
-  <div class="bloom-a"></div>
+  <div class="bloom"></div>
+  <div class="accent-bar"></div>
   <div class="content">
     <div class="text-group">
       <div class="name">Gastón Palavecino</div>
       <div class="role">Senior Software Engineer</div>
-      <div class="tags">AI Systems</div>
+      <div class="tags">.NET · AI Engineering · Full Stack</div>
     </div>
-    <div class="monogram">GP</div>
   </div>
+  <div class="domain">gastonpalav.com.ar</div>
 </body>
 </html>
