@@ -121,7 +121,7 @@
       </ul>
 
       <div class="hero__actions">
-        <a href="#contact" class="btn-primary">Get in touch</a>
+        <span class="btn-magnet"><a href="#contact" class="btn-primary">Get in touch</a></span>
         <a href="assets/cv-gaston-palavecino-2026.pdf" download class="btn-secondary">Download CV</a>
       </div>
 
@@ -573,10 +573,33 @@
       <p class="footer__statement">
         <strong>Gastón Palavecino.</strong> Building software that works in production.
       </p>
-      <span class="footer__copy">© 2026</span>
+      <div class="footer__meta">
+        <button type="button" class="footer__hint" id="cmdk-trigger" aria-label="Open quick navigation">
+          <kbd>Ctrl</kbd><kbd>K</kbd> to jump around
+        </button>
+        <span class="footer__copy">© 2026</span>
+      </div>
     </div>
   </div>
 </footer>
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+     COMMAND PALETTE — Ctrl/Cmd+K quick navigation
+     ══════════════════════════════════════════════════════════════════════════ -->
+<div class="cmdk" id="cmdk" hidden>
+  <div class="cmdk__backdrop" data-cmdk-dismiss></div>
+  <div class="cmdk__panel" role="dialog" aria-modal="true" aria-label="Quick navigation">
+    <div class="cmdk__input-row">
+      <svg class="cmdk__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.3-4.3"/>
+      </svg>
+      <input type="text" class="cmdk__input" id="cmdk-input" placeholder="Jump to a section or project..." autocomplete="off" spellcheck="false" aria-label="Quick navigation search">
+      <kbd class="cmdk__esc">Esc</kbd>
+    </div>
+    <ul class="cmdk__list" id="cmdk-list" role="listbox" aria-label="Results"></ul>
+  </div>
+</div>
 
 <script src="js/main.js" defer></script>
 </body>

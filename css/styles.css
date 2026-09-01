@@ -117,6 +117,22 @@ strong {
 .reveal:nth-child(4) { transition-delay: calc(3 * 60ms); }
 .reveal:nth-child(5) { transition-delay: calc(4 * 60ms); }
 
+/* Native scroll-driven version — same reveal, no JS, hardware-accelerated.
+   JS skips attaching the IntersectionObserver when this is supported. */
+@supports (animation-timeline: view()) {
+  @keyframes reveal-view {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  .reveal {
+    transition: none;
+    animation: reveal-view linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+}
+
 /* ═══════════════════════════════════════════════════════════════════════════
    NAV — N5 Floating pill
    ══════════════════════════════════════════════════════════════════════════ */
@@ -326,16 +342,29 @@ strong {
 }
 
 .hero__name,
-.hero__statement,
 .hero__tags,
 .hero__actions {
   animation: hero-in var(--dur-long) var(--ease-out) both;
 }
 
-.hero__name      { animation-delay: 60ms; }
-.hero__statement { animation-delay: 160ms; }
-.hero__tags      { animation-delay: 260ms; }
-.hero__actions   { animation-delay: 340ms; }
+.hero__name    { animation-delay: 60ms; }
+.hero__tags    { animation-delay: 260ms; }
+.hero__actions { animation-delay: 340ms; }
+
+/* Statement — word-by-word reveal (JS wraps words in .hero__word spans).
+   Mirrors the token-streaming UIs this person builds; degrades to plain
+   static text with no JS or under reduced motion. */
+@keyframes word-in {
+  to { opacity: 1; filter: blur(0); transform: none; }
+}
+
+.hero__word {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  transform: translateY(4px);
+  animation: word-in 500ms var(--ease-out) both;
+}
 
 /* H1 — "Gastón Palavecino" = 18 chars, full display size */
 .hero__name {
@@ -386,6 +415,15 @@ strong {
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-md);
+}
+
+/* Magnetic wrapper — pulls the ONE primary CTA toward the cursor when
+   nearby (hierarchy: draws the eye to the single action that matters).
+   JS sets transform directly; this transition only smooths the return
+   to rest on mouseleave. */
+.btn-magnet {
+  display: inline-block;
+  transition: transform 200ms var(--ease-out);
 }
 
 /* Primary CTA */
@@ -583,6 +621,7 @@ strong {
 
 /* Card base */
 .work-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -596,11 +635,32 @@ strong {
     transform var(--dur-short) var(--ease-out);
 }
 
+/* Spotlight — reuses the hero's cursor-follow motif with a real purpose:
+   highlights whichever card is under exploration. JS sets --spot-x/-y. */
+.work-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    var(--color-spotlight) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity var(--dur-short) var(--ease-out);
+  pointer-events: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .work-card:hover {
     background: var(--color-paper-3);
     border-color: var(--color-paper-4);
     transform: translateY(-2px);
+  }
+
+  .work-card:hover::after {
+    opacity: 1;
   }
 }
 
@@ -1015,12 +1075,173 @@ strong {
   font-weight: 500;
 }
 
+.footer__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.footer__hint {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3xs);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-ink-dim);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color var(--dur-micro) var(--ease-out);
+}
+
+.footer__hint:hover {
+  color: var(--color-ink-muted);
+}
+
+.footer__hint kbd {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  padding: 1px 5px;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  color: var(--color-ink-muted);
+}
+
 .footer__copy {
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   color: var(--color-ink-dim);
   letter-spacing: 0.02em;
   white-space: nowrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMMAND PALETTE — Ctrl/Cmd+K quick navigation
+   ══════════════════════════════════════════════════════════════════════════ */
+
+.cmdk {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-modal);
+  display: flex;
+  justify-content: center;
+  padding-top: 12vh;
+  padding-inline: var(--space-md);
+}
+
+.cmdk[hidden] {
+  display: none;
+}
+
+.cmdk__backdrop {
+  position: fixed;
+  inset: 0;
+  background: oklch(8% 0.004 260 / 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cmdk__panel {
+  position: relative;
+  width: 100%;
+  max-width: 34rem;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px oklch(8% 0.004 260 / 0.5);
+  overflow: hidden;
+  animation: cmdk-in 180ms var(--ease-out) both;
+}
+
+@keyframes cmdk-in {
+  from { opacity: 0; transform: translateY(-8px) scale(0.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+.cmdk__input-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-rule);
+  flex-shrink: 0;
+}
+
+.cmdk__icon {
+  flex-shrink: 0;
+  color: var(--color-ink-dim);
+}
+
+.cmdk__input {
+  flex: 1;
+  min-width: 0;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-ink);
+}
+
+.cmdk__input::placeholder {
+  color: var(--color-ink-dim);
+}
+
+.cmdk__esc {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-dim);
+  padding: 1px 6px;
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+}
+
+.cmdk__list {
+  list-style: none;
+  overflow-y: auto;
+  padding: var(--space-xs);
+}
+
+.cmdk__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+.cmdk__item-label {
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
+.cmdk__item-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-ink-dim);
+  white-space: nowrap;
+}
+
+.cmdk__item.is-active {
+  background: var(--color-accent-bg);
+}
+
+.cmdk__item.is-active .cmdk__item-label {
+  color: var(--color-accent);
+}
+
+.cmdk__empty {
+  padding: var(--space-lg);
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-ink-dim);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -1047,12 +1268,22 @@ strong {
   }
 
   .hero__name,
-  .hero__statement,
   .hero__tags,
   .hero__actions {
     animation: none;
     opacity: 1;
     transform: none;
+  }
+
+  .hero__word {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .btn-magnet {
+    transform: none !important;
   }
 
   html {
