@@ -1,11 +1,10 @@
 /* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Marquee Hero · theme: Aurora
+/* Hallmark · genre: atmospheric · macrostructure: Marquee Hero · theme: zinc-amber
  * enrichment: HP3 cursor-spotlight · nav: N5 floating-pill · footer: Ft5 statement
- * tone: technical-atmospheric · anchor hue: 280° violet / accent 315° rose-violet
+ * tone: technical-neutral · anchor hue: 260° zinc / accent 55° amber
  */
 
 @import url("../tokens.css");
-@import url("https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap");
 
 /* ── Reset ─────────────────────────────────────────────────────────────────── */
 
@@ -35,20 +34,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Background atmosphere — two radial blooms, fixed, no animation */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: var(--bloom-1), var(--bloom-2);
-}
-
-/* Ensure all page content sits above the bloom layer */
-/* No z-index here — setting it creates stacking contexts that trap the
-   fixed nav (z-index:200) inside header's context (z-index:1), causing
-   the hero section to paint over the nav and block all clicks. */
 header,
 main,
 footer {
@@ -332,18 +317,6 @@ strong {
 
 .hero__content {
   max-width: 54rem;
-}
-
-/* Eyebrow — ONE eyebrow total on the page, in mono */
-.hero__eyebrow {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: 400;
-  color: var(--color-accent);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: var(--space-lg);
 }
 
 /* H1 — "Gastón Palavecino" = 18 chars, full display size */
