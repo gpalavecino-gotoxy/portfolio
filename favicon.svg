@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="oklch(14% 0.004 260)"/>
+  <rect width="32" height="32" rx="6" fill="oklch(18% 0.012 70)"/>
   <text
     x="16" y="21"
     text-anchor="middle"
-    font-family="'Geist Mono', monospace"
+    font-family="'Spline Sans Mono', monospace"
     font-size="13"
     font-weight="500"
     letter-spacing="0.04em"
-    fill="oklch(72% 0.16 55)"
+    fill="oklch(80% 0.08 68)"
   >GP</text>
 </svg>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@500;700&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@500&family=Piazzolla:opsz,wght@8..30,700&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -12,15 +12,15 @@
       width: 1200px;
       height: 630px;
       overflow: hidden;
-      background: oklch(14% 0.004 260);
-      font-family: 'Geist', system-ui, sans-serif;
+      background: oklch(18% 0.012 70);
+      font-family: 'Chivo', system-ui, sans-serif;
     }
 
     .bloom {
       position: absolute;
       width: 760px; height: 630px;
       top: -160px; right: -260px;
-      background: radial-gradient(circle, oklch(45% 0.09 55 / 0.14) 0%, transparent 62%);
+      background: radial-gradient(circle, oklch(45% 0.04 68 / 0.14) 0%, transparent 62%);
     }
 
     .content {
@@ -39,21 +39,23 @@
       transform: translateY(-50%);
       width: 6px;
       height: 340px;
-      background: oklch(72% 0.16 55);
+      background: oklch(80% 0.08 68);
       border-radius: 3px;
     }
 
     .text-group {
       display: flex;
       flex-direction: column;
-      max-width: 920px;
+      max-width: 1000px;
     }
 
     .name {
+      font-family: 'Piazzolla', Georgia, serif;
       font-size: 92px;
       font-weight: 700;
-      color: oklch(95% 0.003 260);
-      letter-spacing: -0.035em;
+      color: oklch(95% 0.008 80);
+      letter-spacing: -0.005em;
+      word-spacing: 0.05em;
       line-height: 1.02;
       margin-bottom: 24px;
     }
@@ -61,16 +63,16 @@
     .role {
       font-size: 34px;
       font-weight: 500;
-      color: oklch(78% 0.004 260);
+      color: oklch(84% 0.010 80);
       letter-spacing: -0.01em;
       margin-bottom: 22px;
     }
 
     .tags {
-      font-family: 'Geist Mono', monospace;
+      font-family: 'Spline Sans Mono', monospace;
       font-size: 24px;
       font-weight: 500;
-      color: oklch(72% 0.16 55);
+      color: oklch(80% 0.08 68);
       letter-spacing: 0.01em;
     }
 
@@ -78,9 +80,9 @@
       position: absolute;
       right: 64px;
       bottom: 56px;
-      font-family: 'Geist Mono', monospace;
+      font-family: 'Spline Sans Mono', monospace;
       font-size: 22px;
-      color: oklch(48% 0.006 260);
+      color: oklch(77% 0.012 80);
       letter-spacing: 0.02em;
     }
   </style>

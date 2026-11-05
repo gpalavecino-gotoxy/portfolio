@@ -1,7 +1,7 @@
 /* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
-/* Hallmark · genre: atmospheric · macrostructure: Marquee Hero · theme: zinc-amber
+/* Hallmark · genre: atmospheric · macrostructure: Marquee Hero · theme: charcoal-ochre
  * enrichment: HP3 cursor-spotlight · nav: N5 floating-pill · footer: Ft5 statement
- * tone: technical-neutral · anchor hue: 260° zinc / accent 55° amber
+ * tone: technical-neutral · anchor hue: 70° warm charcoal / accent 68° muted ochre
  */
 
 @import url("../tokens.css");
@@ -79,7 +79,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   font-style: normal; /* no italic headers — ever */
   line-height: 1.1;
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
+  word-spacing: 0.05em;
   overflow-wrap: anywhere;
   min-width: 0;
   color: var(--color-ink);
@@ -370,7 +371,7 @@ strong {
 .hero__name {
   font-size: var(--text-display);
   font-weight: 700;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.005em;
   line-height: 1.0;
   color: var(--color-ink);
   margin-bottom: var(--space-lg);
@@ -386,6 +387,7 @@ strong {
   max-width: 42ch;
   margin-bottom: var(--space-xl);
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 /* Tech tags row */
@@ -508,7 +510,7 @@ strong {
   font-size: var(--text-3xl);
   font-weight: 700;
   color: var(--color-ink);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
 }
 
 .section__lead {
@@ -688,7 +690,7 @@ strong {
   font-size: var(--text-xl);
   font-weight: 700;
   color: var(--color-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.1;
 }
 
@@ -860,7 +862,7 @@ strong {
   font-size: var(--text-lg);
   font-weight: 600;
   color: var(--color-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1.2;
   margin-bottom: var(--space-2xs);
 }
@@ -968,7 +970,7 @@ strong {
   font-size: var(--text-lg);
   font-weight: 600;
   color: var(--color-ink);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   margin-bottom: var(--space-2xs);
 }
 
@@ -1003,7 +1005,7 @@ strong {
   font-size: var(--text-display-s);
   font-weight: 700;
   color: var(--color-ink);
-  letter-spacing: -0.03em;
+  letter-spacing: 0;
   line-height: 1.05;
   margin-bottom: var(--space-xl);
 }
