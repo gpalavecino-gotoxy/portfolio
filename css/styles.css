@@ -617,7 +617,8 @@ strong {
 }
 
 /* Featured card (MDB Pilates — has real metric) spans full width */
-.work-card--featured {
+.work-card--featured,
+.work-card--wide {
   grid-column: 1 / -1;
 }
 
